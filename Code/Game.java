@@ -1,16 +1,19 @@
-package JavaGame;
+package Code;
 
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
 
 public class Game extends Canvas implements Runnable{
 
     public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9; 
     private Thread thread;
+    private Random r;
     private boolean running = false;
     private Handler handler;
+    private HUD hud;
     
     public Game() {
         handler = new Handler();
@@ -19,8 +22,10 @@ public class Game extends Canvas implements Runnable{
 
         new Window(WIDTH, HEIGHT, "First Game", this);
 
-        handler.addObject(new Player(WIDTH / 2 - 40, HEIGHT / 2 - 40, ID.Player));     //erstellen von GameObjects in die LinkedList
-        handler.addObject(new Player(WIDTH / 2 + 40, HEIGHT / 2 + 40, ID.Player2));    
+        hud = new HUD();
+
+        handler.addObject(new Player(WIDTH / 2 - 40, HEIGHT / 2 - 40, ID.Player, handler));     //erstellen von GameObjects in die LinkedList    
+        handler.addObject(new BasicEnemy(WIDTH / 2 - 40, HEIGHT / 2 - 40, ID.BasicEnemy));  //erstellen eines Gegners
     }
 
     //startet den Thread des Programms
@@ -72,10 +77,12 @@ public class Game extends Canvas implements Runnable{
     //GameObjects aktualisieren sich stetig
     private void tick() {
         handler.tick();
+        hud.tick();
     }
 
     //BufferStrategy wird erstellt, Graphics kriegt das Fenster (damit sich das Bild dauerhaft aktualiert)
     private void render() {
+        this.requestFocus();
         BufferStrategy bs = this.getBufferStrategy();
         if(bs == null) {
             this.createBufferStrategy(3);
@@ -88,10 +95,21 @@ public class Game extends Canvas implements Runnable{
 
         handler.render(g);                  //Graphics von den GameObjects werden dauerhaft aktualisiert
 
+        hud.render(g);
+
         g.dispose();
-        bs.show();                          //zeigt zu schluss das Bild
+        bs.show();                          //zeigt zum schluss das Bild
     }
 
+
+    public static int clamp(int var, int min, int max) {    //clamp Methode verhindert, dass der Spieler ueber die Grenzen des Windows geht
+        if(var >= max) 
+            return var = max;
+        else if(var <= min) 
+            return var = min;
+        else 
+            return var;
+    }
 
     public static void main(String[] args) {
         new Game();
