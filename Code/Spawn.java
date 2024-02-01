@@ -20,13 +20,21 @@ public class Spawn {
     public void tick() {
         scoreKeep++;
 
-        if(scoreKeep >= 250) {
+        if(scoreKeep >= 100) {
             scoreKeep = 0;
             hud.setLevel(hud.getLevel() + 1);
-            handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.BasicEnemy, 16, 16, handler));
 
-            if(hud.getLevel() == 3) handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.FastEnemy, 14, 14, handler));
-            if(hud.getLevel() == 4) handler.addObject(new SmartEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.SmartEnemy, 14, 14, handler));
+            if(hud.getLevel() == 2) handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.FastEnemy, 12, 12, handler));
+            else if(hud.getLevel() == 3) handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.FastEnemy, 12, 12, handler));
+            else if(hud.getLevel() == 4) handler.addObject(new SmartEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.SmartEnemy, 12, 12, handler));
+            else if(hud.getLevel() == 5) handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.FastEnemy, 12, 12, handler));
+            else if(hud.getLevel() == 6) handler.addObject(new SmartEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.SmartEnemy, 12, 12, handler));
+            else if(hud.getLevel() == 7) handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.FastEnemy, 12, 12, handler));
+
+            if(hud.getLevel() == 8) {
+            handler.clearEnemys(); 
+            handler.addObject(new BossEnemy(Game.WIDTH / 2 - 52, -100, ID.BossEnemy, 80, 80, handler));
+            }
         }
     }
 }
