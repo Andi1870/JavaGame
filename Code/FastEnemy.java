@@ -4,19 +4,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class BasicEnemy extends GameObject{
+public class FastEnemy extends GameObject{
 
     private Handler handler;
     private int width, height;
 
-    BasicEnemy(int x, int y, ID id, int width, int height, Handler handler) {
+    FastEnemy(int x, int y, ID id, int width, int height, Handler handler) {
         super(x, y, id);
         this.width = width;
         this.height = height;
         this.handler = handler;
 
-        velX = 4;
-        velY = 4;
+        velX = 6;
+        velY = 8;
     }
 
     //creating collision rectangle 
@@ -31,11 +31,11 @@ public class BasicEnemy extends GameObject{
         if (y <= 0 || y >= Game.HEIGHT - 50) velY *= -1;    //Gegner soll an Waenden bouncen   
         if (x <= 0 || x >= Game.WIDTH - 32) velX *= -1;
         
-        handler.addObject(new Trail(x, y, ID.Trail, Color.red, width, height, 0.04f, handler));
+        handler.addObject(new Trail(x, y, ID.Trail, Color.cyan, width, height, 0.04f, handler));
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.red);
+        g.setColor(Color.cyan);
         g.fillRect(x, y, width, height);
     }
 }
