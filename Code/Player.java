@@ -19,7 +19,7 @@ public class Player extends GameObject{
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(x, y, width, height);
+        return new Rectangle((int)x, (int)y, width, height);
     }
 
     @Override   //geht einen bestimmten Code jeden tick durch
@@ -27,8 +27,8 @@ public class Player extends GameObject{
         x += velX;
         y += velY;
 
-        x = Game.clamp(x, 0, Game.WIDTH - 58);
-        y = Game.clamp(y, 0, Game.HEIGHT - 80);
+        x = Game.clamp((int)x, 0, Game.WIDTH - 58);
+        y = Game.clamp((int)y, 0, Game.HEIGHT - 80);
 
         collision();
         handler.addObject(new Trail(x, y, ID.Trail, Color.white, width, height, 0.06f, handler));
@@ -39,7 +39,7 @@ public class Player extends GameObject{
             
             GameObject tempObject = handler.object.get(i); 
             
-            if(tempObject.getID() == ID.BasicEnemy || tempObject.getID() == ID.FastEnemy) {
+            if(tempObject.getID() == ID.BasicEnemy || tempObject.getID() == ID.FastEnemy || tempObject.getID() == ID.SmartEnemy) {
                 if(getBounds().intersects(tempObject.getBounds())) {
                     //collision code
                     HUD.HEALTH -= 2;
@@ -51,6 +51,6 @@ public class Player extends GameObject{
     @Override   //rendert die Grafik des Spielers
     public void render(Graphics g) {
         g.setColor(Color.white);
-        g.fillRect(x, y, width, height);
+        g.fillRect((int)x, (int)y, width, height);
     }
 }

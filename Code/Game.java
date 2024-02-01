@@ -29,7 +29,7 @@ public class Game extends Canvas implements Runnable{
         r = new Random();
 
         handler.addObject(new Player(WIDTH / 2 - 40, HEIGHT / 2 - 40, ID.Player, 40, 40, handler));     //erstellen von GameObjects in die LinkedList    
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH) - 50, r.nextInt(HEIGHT) - 50, ID.BasicEnemy, 16, 16, handler));  //erstellen eines Gegners
+        handler.addObject(new SmartEnemy(r.nextInt(WIDTH) - 50, r.nextInt(HEIGHT) - 50, ID.SmartEnemy, 14, 14, handler));  //erstellen eines Gegners
     }
 
     //startet den Thread des Programms
@@ -107,7 +107,7 @@ public class Game extends Canvas implements Runnable{
     }
 
 
-    public static int clamp(int var, int min, int max) {    //clamp Methode verhindert, dass der Spieler ueber die Grenzen des Windows geht
+    public static float clamp(float var, float min, float max) {    //clamp Methode verhindert, dass der Spieler ueber die Grenzen des Windows geht
         if(var >= max) 
             return var = max;
         else if(var <= min) 

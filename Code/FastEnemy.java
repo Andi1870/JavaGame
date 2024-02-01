@@ -21,7 +21,7 @@ public class FastEnemy extends GameObject{
 
     //creating collision rectangle 
     public Rectangle getBounds() {
-        return new Rectangle(x, y, width, height);
+        return new Rectangle((int)x, (int)y, width, height);
     }
 
     public void tick() {
@@ -36,6 +36,6 @@ public class FastEnemy extends GameObject{
 
     public void render(Graphics g) {
         g.setColor(Color.cyan);
-        g.fillRect(x, y, width, height);
+        g.fillRect((int)x, (int)y, width, height);
     }
 }
