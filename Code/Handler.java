@@ -3,11 +3,14 @@ package Code;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
+import Code.GameObjects.GameObject;
+import Code.GameObjects.ID;
+
 //Handlet die einen GameObjects
 public class Handler {
 
     //Liste von GameObejcts wird erstellt
-    LinkedList<GameObject> object = new LinkedList<GameObject>();
+    public LinkedList<GameObject> object = new LinkedList<GameObject>();
 
     public void tick() {
         for(int i = 0; i < object.size(); i++) {

@@ -1,15 +1,21 @@
-package Code;
+package Code.GameObjects.Enemys;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+
+import Code.Game;
+import Code.Handler;
+import Code.GameObjects.GameObject;
+import Code.GameObjects.ID;
+import Code.Overview.Trail;
 
 public class FastEnemy extends GameObject{
 
     private Handler handler;
     private int width, height;
 
-    FastEnemy(int x, int y, ID id, int width, int height, Handler handler) {
+    public FastEnemy(int x, int y, ID id, int width, int height, Handler handler) {
         super(x, y, id);
         this.width = width;
         this.height = height;

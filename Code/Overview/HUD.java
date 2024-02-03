@@ -1,7 +1,9 @@
-package Code;
+package Code.Overview;
 
 import java.awt.Color;
 import java.awt.Graphics;
+
+import Code.Game;
 
 public class HUD {
     

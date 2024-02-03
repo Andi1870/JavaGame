@@ -1,10 +1,14 @@
-package Code;
+package Code.Overview;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+import Code.Handler;
+import Code.GameObjects.GameObject;
+import Code.GameObjects.ID;
 
 public class Trail extends GameObject{      //Spuren eines Gameobjects
 

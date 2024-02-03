@@ -1,6 +1,13 @@
-package Code;
+package Code.GameObjects;
 
 import java.util.Random;
+
+import Code.Game;
+import Code.Handler;
+import Code.GameObjects.Enemys.BossEnemy;
+import Code.GameObjects.Enemys.FastEnemy;
+import Code.GameObjects.Enemys.SmartEnemy;
+import Code.Overview.HUD;
 
 public class Spawn {
     

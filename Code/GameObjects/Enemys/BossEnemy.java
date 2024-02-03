@@ -1,9 +1,15 @@
-package Code;
+package Code.GameObjects.Enemys;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.Random;
+
+import Code.Game;
+import Code.Handler;
+import Code.GameObjects.GameObject;
+import Code.GameObjects.ID;
+import Code.Overview.Trail;
 
 public class BossEnemy extends GameObject{
 
@@ -13,7 +19,7 @@ public class BossEnemy extends GameObject{
     private int timer2 = 50;
     private Random r = new Random();
 
-    BossEnemy(int x, int y, ID id, int width, int height, Handler handler) {
+    public BossEnemy(int x, int y, ID id, int width, int height, Handler handler) {
         super(x, y, id);
         this.width = width;
         this.height = height;

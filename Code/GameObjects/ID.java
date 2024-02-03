@@ -1,4 +1,4 @@
-package Code;
+package Code.GameObjects;
 
 public enum ID {
     
@@ -8,5 +8,6 @@ public enum ID {
     FastEnemy(),
     SmartEnemy(),
     BossEnemy(),
+    
     Trail();
 }

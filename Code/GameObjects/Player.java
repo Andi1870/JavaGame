@@ -1,8 +1,13 @@
-package Code;
+package Code.GameObjects;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+
+import Code.Game;
+import Code.Handler;
+import Code.Overview.HUD;
+import Code.Overview.Trail;
 
 public class Player extends GameObject{
 

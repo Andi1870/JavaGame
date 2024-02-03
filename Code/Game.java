@@ -6,6 +6,14 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.Random;
 
+import Code.GameObjects.ID;
+import Code.GameObjects.Player;
+import Code.GameObjects.Spawn;
+import Code.GameObjects.Enemys.BasicEnemy;
+import Code.Overview.HUD;
+import Code.Overview.KeyInput;
+import Code.Overview.Window;
+
 public class Game extends Canvas implements Runnable{
 
     public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9; 

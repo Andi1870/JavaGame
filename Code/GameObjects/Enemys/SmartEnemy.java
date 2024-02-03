@@ -1,8 +1,13 @@
-package Code;
+package Code.GameObjects.Enemys;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+
+import Code.Handler;
+import Code.GameObjects.GameObject;
+import Code.GameObjects.ID;
+import Code.Overview.Trail;
 
 public class SmartEnemy extends GameObject{
 
@@ -12,6 +17,7 @@ public class SmartEnemy extends GameObject{
     private int width, height;
    
 
+    public 
     SmartEnemy(int x, int y, ID id, int width, int height, Handler handler) {
         super(x, y, id);
         this.width = width;

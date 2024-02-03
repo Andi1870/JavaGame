@@ -1,4 +1,4 @@
-package Code;
+package Code.GameObjects;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
