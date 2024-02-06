@@ -1,5 +1,7 @@
 package Code.GameObjects;
 
+import Code.MenuParticle;
+
 public enum ID {
     
     //Gruppe von Konstanten. Gehört ein Objekt zu einem Player oder zu etwas anderem. eindeutige ID für eine Gruppe
@@ -8,6 +10,6 @@ public enum ID {
     FastEnemy(),
     SmartEnemy(),
     BossEnemy(),
-    
+    MenuParticle(),
     Trail();
 }

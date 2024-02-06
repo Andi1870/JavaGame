@@ -50,7 +50,12 @@ public class Game extends Canvas implements Runnable{
 
         if(gameState == STATE.Game) {
             handler.addObject(new Player(WIDTH / 2 - 40, HEIGHT / 2 - 40, ID.Player, 40, 40, handler));     //erstellen von GameObjects in die LinkedList    
-            handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH) - 50, r.nextInt(Game.HEIGHT) - 50, ID.BasicEnemy, 16, 16, handler));     //erstellen eines Gegners
+            handler.addObject(new BasicEnemy(r.nextInt(WIDTH) - 50, r.nextInt(HEIGHT) - 50, ID.BasicEnemy, 16, 16, handler));     //erstellen eines Gegners
+        }
+        else {
+            for(int i = 0; i < 10; i++) {
+                handler.addObject(new MenuParticle(r.nextInt(WIDTH) - 50, r.nextInt(HEIGHT) - 50, ID.MenuParticle, 16, 16, handler));     //erstellen eines Gegners
+            }
         }
     }
 
